@@ -82,7 +82,7 @@ describe("your regexes", function(){
   // CHALLENGE: match a decimal number.
   it("should match decimal numbers", function(){
 
-    var regex = /fixme/;
+    var regex = /^[-]*[0-9]*([\.][0-9]+)*$/;
 
     var tests = [
       ["-0.0", true],
