@@ -64,8 +64,8 @@ describe("your regexes", function(){
   it("should extract text", function(){
 
     var extractText = function(str){
-      var matches = /fixme/.exec(str);
-      return /* something to do with matches?? */;
+      var matches = /([^<>]*)<.+?>([^<>]*)<.+?>([^<>]*)/.exec(str);
+      return matches[1]+matches[2]+matches[3];
     };
 
     var tests = [
