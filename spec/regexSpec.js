@@ -3,7 +3,7 @@ describe("your regexes", function(){
   // CHALLENGE: match an ip address
   it("should match ip addresses", function(){
 
-    var regex = /fixme/;
+    var regex = /\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/;
 
     var tests = [
       ["a.b.c.d", false],
@@ -29,7 +29,7 @@ describe("your regexes", function(){
   // - can only contain letters, spaces, underscores and hyphens.
   it("should filter usernames", function(){
 
-    var regex = /fixme/;
+    var regex = /^[a-zA-Z]{1}[\w\s-]{3,19}$/;
 
     var tests = [
       ["shawndrost", true],
@@ -42,7 +42,7 @@ describe("your regexes", function(){
       ["all_killer", true],
       ["no%filler", false],
       ["a_____--______------", true],
-      ["a123", false],
+      ["a12", false],
       ["abcdefghijklmnopqrstuvwxyz", false],
       ["abcdefghijklmnopqrst", true]
     ];
