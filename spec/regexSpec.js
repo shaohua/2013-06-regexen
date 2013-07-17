@@ -112,7 +112,7 @@ describe("your regexes", function(){
   it("should detect nearby words", function(){
 
     var containsNearbyWords = function(haystack, needle){
-      var re = new RegExp(needle+"(\\s[\\w']+){1,3}\\s"+needle+"$", "g");
+      var re = new RegExp( needle + "(\\s[\\w']+){1,3}\\s" + needle+ "(\\s.*)*$", "g");
       var flag = re.test(haystack);
       return flag;
     };
