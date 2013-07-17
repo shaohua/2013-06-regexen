@@ -112,15 +112,16 @@ describe("your regexes", function(){
   it("should detect nearby words", function(){
 
     var containsNearbyWords = function(haystack, needle){
-      // ???
-      return /* ?? */;
+      var re = new RegExp(needle+"(\\s[\\w']+){1,3}\\s"+needle+"$", "g");
+      var flag = re.test(haystack);
+      return flag;
     };
 
     var tests = [
       ["we like regexes because they're regexes", "regexes", true],
       ["regexes are lovely", "potato", false],
       ["we like a regex because of regexes", "regex", false],
-      ["regexes, we like, because they're regexes", "regexes", false],
+      ["regexes, we like, because they're regexes", "regexes", false]
     ];
 
     tests.forEach(function(testData){
